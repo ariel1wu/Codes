@@ -1,0 +1,115 @@
+import java. util.*;
+public class chapter5 
+{
+   public static void main (String []args){
+      System.out.println("Welcome to the game of 23!");
+      yourturn();
+      
+   }//end main
+   
+   
+      //randomly draw a card
+      public static String Card(String Cardtype){      
+         int    Type     = (int)(Math.random()*13+1);
+         if(Type == 1){
+         Cardtype = "Ace";}
+         if(Type == 2){
+         Cardtype = "2";}
+         if(Type == 3){
+         Cardtype = "3";}
+         if(Type == 4){
+         Cardtype = "4";}
+         if(Type == 5){
+         Cardtype = "5";}
+         if(Type == 6){
+         Cardtype = "6";}
+         if(Type == 7){
+         Cardtype = "7";}
+         if(Type == 8){
+         Cardtype = "8";}
+         if(Type == 9){
+         Cardtype = "9";}
+         if(Type ==  10){
+         Cardtype = "10";}
+         if(Type == 11){
+         Cardtype = "Jack";}
+         if(Type == 12){
+         Cardtype = "Queen";}
+         if(Type == 13){
+         Cardtype = "King";}
+      return Cardtype;
+   }
+   
+   //have correspondent points to each type of cards
+      public static int Cardpoints(String Cardtype){
+      if (Cardtype == "Ace"){
+      return 1;}
+      if (Cardtype == "1"){
+      return 1;}
+      if (Cardtype == "2"){
+      return 2;}
+      if (Cardtype == "3"){
+      return 3;}
+      if (Cardtype == "4"){
+      return 4;}
+      if (Cardtype == "5"){
+      return 5;}
+      if (Cardtype == "6"){
+      return 6;}
+      if (Cardtype == "7"){
+      return 7;}
+      if (Cardtype == "8"){
+      return 8;}
+      if (Cardtype == "9"){
+      return 9;}
+      if (Cardtype == "10"){
+      return 10;}
+      if (Cardtype == "Jack"){
+      return 10;}
+      if (Cardtype == "Queen"){
+      return 10;}
+      if (Cardtype == "King"){
+      return 10;}
+      else
+      return 0;
+   }
+
+   public static void yourturn (){
+      int Yourpointssum = 0;
+      int Dealerpointsum = 0;
+      int total = 0;
+      while (total<=23){
+      System.out.println("Your turn");
+      String yourCardtype = Card("");
+      System.out.println("You got "+yourCardtype);
+Yourpointssum += Cardpoints(yourCardtype);
+System.out.println("You have "+Yourpointssum);
+
+System.out.println("Dealer has "+Dealerpointsum);
+total = Yourpointssum+Dealerpointsum;
+System.out.println("Total: "+total);
+if (total==23){
+System.out.println("You win");
+}else if (total >23){
+System.out.println("You lose");
+}else{
+
+System.out.println();
+System.out.println("Dealer's turn");
+String dealerCardtype = Card("");
+System.out.println("Dealer's card is "+dealerCardtype);
+Dealerpointsum += Cardpoints(dealerCardtype);
+System.out.println("Dealer has "+Dealerpointsum);
+total = Yourpointssum+Dealerpointsum;
+System.out.println("total: "+total);
+if (total==23){
+System.out.println("Dealer wins");
+}else if (total >23)
+System.out.println("Dealer lose");
+}
+
+System.out.println();
+}
+
+}
+}
